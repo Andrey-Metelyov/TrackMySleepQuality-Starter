@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/android-kotlin-fundamentals-starter-apps-master/TrackMySleepQuality-Starter/app/src/main/res/layout/activity_main.xml" value="0.31979166666666664" />
+        <entry key="..\:/Projects/android-kotlin-fundamentals-starter-apps-master/TrackMySleepQuality-Starter/app/src/main/res/layout/fragment_sleep_quality.xml" value="0.31979166666666664" />
         <entry key="..\:/Projects/android-kotlin-fundamentals-starter-apps-master/TrackMySleepQuality-Starter/app/src/main/res/layout/fragment_sleep_tracker.xml" value="0.31979166666666664" />
       </map>
     </option>
