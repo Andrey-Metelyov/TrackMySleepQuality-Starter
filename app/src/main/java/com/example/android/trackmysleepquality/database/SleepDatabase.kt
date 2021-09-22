@@ -22,12 +22,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [SleepNight::class], version = 1, exportSchema = false)
-annotation class SleepDatabase : RoomDatabase {
+abstract class SleepDatabase : RoomDatabase() {
+
     abstract val sleepDatabaseDao: SleepDatabaseDao
 
     companion object {
+
         @Volatile
         private var INSTANCE: SleepDatabase? = null
+
         fun getInstance(context: Context): SleepDatabase? {
             synchronized(this) {
                 var instance = INSTANCE
@@ -35,7 +38,11 @@ annotation class SleepDatabase : RoomDatabase {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         SleepDatabase::class.java,
-                        "sleep_history_database").build()
+                        "sleep_history_database"
+                    )
+                        .fallbackToDestructiveMigration()
+                        .build()
+                    INSTANCE = instance
                 }
                 return instance
             }
